@@ -1,0 +1,28 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class User extends Model {
+
+  /**
+   * @var array
+   */
+  protected $dates = ['logged_at'];
+
+  /**
+   * @var array
+   */
+  protected $fillable = [
+    'reference_number',
+    'email_address',
+    'first_name',
+    'middle_initial',
+    'last_name',
+    'strand',
+    'parents_contact_number',
+    'preferred_school',
+    'preferred_program'
+  ];
+}

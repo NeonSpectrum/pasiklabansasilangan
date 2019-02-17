@@ -1,0 +1,70 @@
+@font-face {
+  font-family: HighStories;
+  src: url('../font/Highstories Sans.otf') format('opentype');
+}
+
+@font-face {
+  font-family: SeaRocks;
+  src: url('../font/Searocks OTF.otf') format('opentype');
+}
+
+@font-face {
+  font-family: LemonMilk;
+  src: url('../font/LemonMilk.otf') format('opentype');
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.scanner {
+  height: 100%;
+  margin-bottom: 0;
+}
+
+body {
+  background: url(../img/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.select-dropdown {
+  overflow-y: auto !important;
+}
+
+.swal2-popup .swal2-file:focus,
+.swal2-popup .swal2-input:focus,
+.swal2-popup .swal2-textarea:focus {
+  border: none !important;
+}
+
+div.material-table table tr td {
+  word-wrap: break-word;
+}
+
+.modal {
+  max-height: 90% !important;
+}
+
+.modal.modal-fixed-footer {
+  height: 90% !important;
+}
+
+tr.paid td {
+  color: red !important;
+}
+
+tr.sent td {
+  color: blue !important;
+}
+
+.swal2-modal.swal2-modal-lg {
+  width: 70%;
+  height: 100%;
+}
+
+.swal2-modal.swal2-modal-md {
+  width: 50%;
+}
