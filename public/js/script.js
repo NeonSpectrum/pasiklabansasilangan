@@ -59,15 +59,6 @@ $(document).ready(function() {
   $('form[name=frmRegister]').submit(function(e) {
     e.preventDefault()
 
-    if (
-      !$(this)
-        .find('input[name=terms]')
-        .prop('checked')
-    ) {
-      alert('Please check the terms.')
-      return
-    }
-
     $(this)
       .find('input')
       .prop('readonly', true)
