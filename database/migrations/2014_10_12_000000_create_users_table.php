@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration {
       $table->string('preferred_school');
       $table->string('preferred_program');
       $table->string('picture_filename');
+      $table->integer('winner')->default(0);
       $table->timestamp('logged_at')->nullable();
       $table->timestamps();
     });

@@ -79,4 +79,27 @@ class DashboardController extends Controller {
       return response()->json(['success' => true]);
     }
   }
+
+  protected function raffle() {
+    $logged = User::whereTime('logged_at', '<', '22:00:00')->where('winner', 0)->get();
+
+    $data = [];
+
+    foreach ($logged as $row) {
+      $data[] = \DB::select("SELECT * FROM (SELECT first_name, last_name, nickname, reference_number FROM `users` UNION SELECT first_name, last_name, nickname, reference_number FROM companions) AS U WHERE reference_number='" . $row->reference_number . "'")[0];
+    }
+
+    // $data = \DB::select('SELECT * FROM (SELECT first_name, last_name, nickname, reference_number FROM `users` UNION SELECT first_name, last_name, nickname, reference_number FROM companions) AS U');
+
+    return view('raffle', ['data' => $data]);
+  }
+
+  /**
+   * @param Request $request
+   */
+  protected function raffleWinner(Request $request) {
+    Logged::where('reference_number', $request->ref)->update([
+      'winner' => 1
+    ]);
+  }
 }
