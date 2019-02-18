@@ -18,7 +18,19 @@
               <img src="{{ asset('img/ue_thumb.png') }}" alt="" height="100px" style="margin-top:5px">
             </div>
           </div>
-          <div class="card-content">
+          <div class="card-content" style="overflow:hidden">
+            <h6 align='center' style="font-weight:bold">General Instructions</h6>
+            <ol>
+              <li>Fill up the pre-registration form completely.</li>
+              <li>Make sure that your email address is correctly written.</li>
+              <li>For unsuccessful registration, please contact CCSS-R&D at 735-5471 loc. 382.</li>
+              <li>For successful registration, kindly check your registered email for the pre-registration QR Code.</li>
+              <li>Download, keep, and bring the QR Code on the event date.</li>
+              <li>QR Code is unique for every student registered in the system. Distribution/Sharing is prohibited.</li>
+              <li>QR Code is important in the raffle system.</li>
+            </ol>
+          </div>
+          <div class="card-action">
             <div class="row">
               <div class="input-field col m5">
                 <input id="first_name" name="first_name" type="text" class="validate" required>
@@ -33,7 +45,15 @@
                 <label for="last_name">Last Name</label>
               </div>
               <div class="input-field col m6">
-                <input id="strand" name="strand" type="text" class="validate" required>
+                <select id="strand" name="strand" type="text" class="validate" required>
+                  <option>STEM</option>
+                  <option>HUMSS</option>
+                  <option>ABM</option>
+                  <option>TECHVOC-HE</option>
+                  <option>GAS</option>
+                  <option>TECHVOC-ICT</option>
+                  <option>SPORTS</option>
+                </select>
                 <label for="strand">Strand</label>
               </div>
               <div class="input-field col m6">
@@ -55,19 +75,6 @@
             </div>
           </div>
           <div class="card-action" style="overflow:hidden">
-            <h6 align='center' style="font-weight:bold">Privacy Notice</h6>
-            <p style='text-align:justify;color:#545454;font-size:14px'>
-              &quot;The event organizers are collecting information from you as participants for the purposes of registration and overall event management.   By providing your information, you are giving your consent to us to use your information for the aforementioned purposes.
-            </p>
-            <p style='text-align: justify;color:#545454;font-size:14px'>
-              After conclusion of the event and completion of all necessary reports, your personal data will be saved in secure files for future reference and networking activities. If you do not wish to be contacted further after this event, kindly inform the organizers.&quot;
-            </p>
-            <label>
-              <input type="checkbox" name="terms">
-              <span>I understand and agree to these terms.</span>
-            </label>
-          </div>
-          <div class="card-action" style="overflow:hidden">
             <button type="submit" class="btn waves-light waves-effect right">Register</button>
           </div>
         </form>
@@ -76,3 +83,6 @@
   </div>
 </div>
 @include('footer')
+<script>
+  swal("Privacy Notice", `""This system is a pre-registration for the Pasiklaban 2019. The organizers are collecting information/picture from you as participants for the purposes of registration and overall event management. By providing your information/picture, you are giving your consent to us to use your information/picture for the aforementioned purposes. After conclusion of the event and completion of all necessary reports, your personal data will be saved in secure files for future reference and networking activities. If you do not wish to be contacted further after this event, kindly inform the organizers.""`,'info')
+</script>

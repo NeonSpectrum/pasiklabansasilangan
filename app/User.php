@@ -32,4 +32,12 @@ class User extends Model {
   public function getNameAttribute() {
     return $this->first_name . ' ' . $this->middle_initial . ' ' . $this->last_name;
   }
+
+  /**
+   * @param $query
+   * @return mixed
+   */
+  public function scopeLogged($query) {
+    return $query->whereNotNull('logged_at');
+  }
 }

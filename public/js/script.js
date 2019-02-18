@@ -18,9 +18,8 @@ $(document).ready(function() {
     dismissible: false,
     endingTop: '5%'
   })
-  $('select')
-    .not('[name="companion_batch[]"]')
-    .formSelect()
+  $('select[name=strand]').formSelect()
+
   $('.dropdown-trigger').dropdown()
 
   $('form[name=frmLogin]').submit(function(e) {
