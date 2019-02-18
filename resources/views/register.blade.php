@@ -84,5 +84,5 @@
 </div>
 @include('footer')
 <script>
-  swal("Privacy Notice", `""This system is a pre-registration for the Pasiklaban 2019. The organizers are collecting information/picture from you as participants for the purposes of registration and overall event management. By providing your information/picture, you are giving your consent to us to use your information/picture for the aforementioned purposes. After conclusion of the event and completion of all necessary reports, your personal data will be saved in secure files for future reference and networking activities. If you do not wish to be contacted further after this event, kindly inform the organizers.""`,'info')
+  swal("Privacy Notice", `"This system is a pre-registration for the Pasiklaban 2019. The organizers are collecting information/picture from you as participants for the purposes of registration and overall event management. By providing your information/picture, you are giving your consent to us to use your information/picture for the aforementioned purposes. After conclusion of the event and completion of all necessary reports, your personal data will be saved in secure files for future reference and networking activities. If you do not wish to be contacted further after this event, kindly inform the organizers."`,'info')
 </script>

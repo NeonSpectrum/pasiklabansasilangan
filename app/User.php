@@ -37,7 +37,23 @@ class User extends Model {
    * @param $query
    * @return mixed
    */
+  public function getIsLoggedAttribute() {
+    return $this->logged_at != null;
+  }
+
+  /**
+   * @param $query
+   * @return mixed
+   */
   public function scopeLogged($query) {
     return $query->whereNotNull('logged_at');
+  }
+
+  /**
+   * @param $query
+   * @return mixed
+   */
+  public function scopeLog($query) {
+    return $query->update(['lo']);
   }
 }
