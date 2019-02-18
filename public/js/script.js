@@ -85,7 +85,7 @@ $(document).ready(function() {
           swal({
             title: 'Success',
             type: 'success',
-            text: 'Successful Registration! Kindly check your email for your Entrance Barcode.'
+            text: 'Successful Registration! Kindly check your email for your Entrance QR Code.'
           }).then(function() {
             location.reload()
           })
