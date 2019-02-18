@@ -32,19 +32,19 @@
           </div>
           <div class="card-action">
             <div class="row">
-              <div class="input-field col m5">
+              <div class="input-field col m5 s12">
                 <input id="first_name" name="first_name" type="text" class="validate" required>
                 <label for="first_name">First Name</label>
               </div>
-              <div class="input-field col m2">
+              <div class="input-field col m2 s12">
                 <input id="middle_initial" name="middle_initial" type="text" class="validate">
                 <label for="middle_initial">Middle Initial</label>
               </div>
-              <div class="input-field col m5">
+              <div class="input-field col m5 s12">
                 <input id="last_name" name="last_name" type="text" class="validate" required>
                 <label for="last_name">Last Name</label>
               </div>
-              <div class="input-field col m6">
+              <div class="input-field col m6 s12">
                 <select id="strand" name="strand" type="text" class="validate" required>
                   <option>STEM</option>
                   <option>HUMSS</option>
@@ -56,19 +56,19 @@
                 </select>
                 <label for="strand">Strand</label>
               </div>
-              <div class="input-field col m6">
+              <div class="input-field col m6 s12">
                 <input id="parents_contact_number" name="parents_contact_number" type="text" class="validate" required>
                 <label for="parents_contact_number">Parent's Contact Number</label>
               </div>
-              <div class="input-field col m6">
+              <div class="input-field col m6 s12">
                 <input id="preferred_school" name="preferred_school" type="text" class="validate" required>
                 <label for="preferred_school">Preferred School in College</label>
               </div>
-              <div class="input-field col m6">
+              <div class="input-field col m6 s12">
                 <input id="preferred_program" name="preferred_program" type="text" class="validate" required>
                 <label for="preferred_program">Preferred Program/Course</label>
               </div>
-              <div class="input-field col m12">
+              <div class="input-field col m12 s12">
                 <input id="email_address" name="email_address" type="email" class="validate" required>
                 <label for="email_address">Email Address</label>
               </div>
