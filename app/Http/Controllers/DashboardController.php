@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Common;
 use App\Exports\DataExport;
 use App\Exports\SentTicketExport;
-use App\Logged;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -44,11 +43,11 @@ class DashboardController extends Controller {
     $image = $request->image;
 
     if ($request->type == 'qrcode') {
-      $user = Common::getRowByReferenceNumber($code);
+      $user = User::where('reference_number', $code)->first();
 
       if (!$user->first()) {
         return response()->json(['success' => false, 'error' => 'Invalid QR Code.']);
-      } else if (Logged::where('reference_number', $code)->first()) {
+      } else if ($user->isLogged) {
         return response()->json(['success' => false, 'error' => 'Already Logged In.']);
       } else {
         $image = str_replace('data:image/webp;base64,', '', $image);
@@ -61,7 +60,8 @@ class DashboardController extends Controller {
 
         file_put_contents($file, $image);
 
-        Logged::create(['reference_number' => $code]);
+        $user->logged_at = \Carbon::now();
+        $user->save();
 
         return response()->json(['success' => true, 'name' => $user->first()->first_name . ' ' . $user->first()->last_name]);
       }
