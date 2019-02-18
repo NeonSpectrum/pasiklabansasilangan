@@ -30,11 +30,18 @@ body {
   background-attachment: fixed;
 }
 
+.footer {
+  background-color: rgba(68, 170, 68, 0.9);
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+}
+
 .select-dropdown {
   overflow-y: auto !important;
 }
 
-.swal2-popup .swal2-file:focus,
+.swal2-popup .swal2-f ile:focus,
 .swal2-popup .swal2-input:focus,
 .swal2-popup .swal2-textarea:focus {
   border: none !important;

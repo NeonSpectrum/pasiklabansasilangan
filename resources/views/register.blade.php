@@ -6,16 +6,16 @@
         <form name="frmRegister">
           <div class="center-align" style="background:lightgreen;overflow:auto">
             <div class="col s3">
-              <img src="{{ asset('img/ccss_thumb.png') }}" alt="" height="100px" style="margin-top:5px">
+              <img src="{{ asset('img/ue_thumb.png') }}" alt="" width="100%" style="margin-top:5px">
             </div>
-            <div class="col s6" style="margin-top:15px">
+            <div class="col s6" style="margin-top:45px">
               <span class="white-text card-title" style="font-weight:bold">
                 <span style="font-family:LemonMilk;color:green;font-size:22px">Pasiklaban sa Silangan </span><br>
                 <span style="font-family:HighStories">Pre-registration Form</span>
               </span>
             </div>
             <div class="col s3">
-              <img src="{{ asset('img/ue_thumb.png') }}" alt="" height="100px" style="margin-top:5px">
+              <img src="{{ asset('img/ccss_thumb.png') }}" alt="" width="100%" style="margin-top:5px">
             </div>
           </div>
           <div class="card-content" style="overflow:hidden">
@@ -81,6 +81,9 @@
       </div>
     </div>
   </div>
+</div>
+<div class="footer">
+  Copyright &copy;{{ date('Y') }}. Research and Development Unit.
 </div>
 @include('footer')
 <script>
