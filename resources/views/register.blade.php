@@ -11,7 +11,7 @@
             <div class="col s6" style="margin-top:15px">
               <span class="white-text card-title" style="font-weight:bold">
                 <span style="font-family:LemonMilk;color:green;font-size:22px">Pasiklaban sa Silangan </span><br>
-                <span style="font-family:HighStories">Registration Form</span>
+                <span style="font-family:HighStories">Pre-registration Form</span>
               </span>
             </div>
             <div class="col s3">
@@ -46,7 +46,7 @@
               </div>
               <div class="input-field col m6">
                 <input id="preferred_program" name="preferred_program" type="text" class="validate" required>
-                <label for="preferred_program">Preferred Program</label>
+                <label for="preferred_program">Preferred Program/Course</label>
               </div>
               <div class="input-field col m12">
                 <input id="email_address" name="email_address" type="email" class="validate" required>
