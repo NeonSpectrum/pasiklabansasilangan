@@ -19,12 +19,7 @@ Route::get('/ ', function () {
 });
 
 Route::middleware('auth')->group(function () {
-  Route::prefix('/dashboard')->group(function () {
-    Route::get('/', function () {
-      return redirect()->route('dashboard.all');
-    });
-    Route::get('/all', 'DashboardController@showAll')->name('dashboard.all');
-  });
+  Route::get('dashboard', 'DashboardController@showAll')->name('dashboard');
 
   Route::get('scanner', function () {
     return view('scanner');
