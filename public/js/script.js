@@ -59,38 +59,14 @@ $(document).ready(function() {
 
   $('form[name=frmRegister]').submit(function(e) {
     e.preventDefault()
-    let isCompanions = $(this).data('type') == 'with-companions'
 
-    if (!isCompanions) {
-      let numberOfCompanions = $(this)
-        .find('input[name=number_of_companions]')
-        .val()
-
-      if (
-        !$(this)
-          .find('input[name=terms]')
-          .prop('checked')
-      ) {
-        alert('Please check the terms.')
-        return
-      }
-
-      if (numberOfCompanions > 0) {
-        $('.fields-content').html(null)
-        for (var i = 1; i <= numberOfCompanions; i++) {
-          $('.fields-content').append(
-            "<div class='divider'></div>" +
-              $('.template')
-                .html()
-                .replace(/\{id\}/g, i)
-          )
-        }
-        $('.fields-content')
-          .find('select')
-          .formSelect()
-        $('#companionsModal').modal('open')
-        return
-      }
+    if (
+      !$(this)
+        .find('input[name=terms]')
+        .prop('checked')
+    ) {
+      alert('Please check the terms.')
+      return
     }
 
     $(this)
@@ -99,13 +75,6 @@ $(document).ready(function() {
     $(this)
       .find('button[type=submit]')
       .prop('disabled', true)
-
-    let form_data = isCompanions
-      ? {
-          ...$(this).serializeJSON(),
-          ...$('form[name=frmRegister]:not([data-type=with-companions])').serializeJSON()
-        }
-      : $(this).serializeJSON()
 
     swal({
       title: 'Please wait...',
@@ -117,7 +86,7 @@ $(document).ready(function() {
     $.ajax({
       context: this,
       type: 'POST',
-      data: form_data,
+      data: $(this).serialize(),
       dataType: 'json'
     })
       .done(function(response) {

@@ -25,4 +25,11 @@ class User extends Model {
     'preferred_school',
     'preferred_program'
   ];
+
+  /**
+   * @return mixed
+   */
+  public function getNameAttribute() {
+    return $this->first_name . ' ' . $this->middle_initial . ' ' . $this->last_name;
+  }
 }
