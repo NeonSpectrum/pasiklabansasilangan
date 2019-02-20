@@ -83,7 +83,7 @@ class DashboardController extends Controller {
   protected function raffle() {
     $logged = User::whereTime('logged_at', '<', '22:00:00')->where('winner', 0)->get();
 
-    $data = User::logged()
+    $data = User::logged();
     // $data = \DB::select('SELECT * FROM (SELECT first_name, last_name, nickname, reference_number FROM `users` UNION SELECT first_name, last_name, nickname, reference_number FROM companions) AS U');
 
     return view('raffle', ['data' => $data]);
