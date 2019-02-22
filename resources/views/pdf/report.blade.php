@@ -33,7 +33,7 @@
       <tr>
         <td>{{ $id + 1 }}</td>
         <td>{{ $row->name }}</td>
-        <td>{{ $row->email_address }}<br>{{ $row->reference_number }}</td>
+        <td>{{ $row->email_address }}<br/>{{ $row->reference_number }}</td>
         <td>{{ $row->strand }}</td>
         <td>{{ $row->preferred_school }}</td>
         <td>{{ $row->preferred_program }}</td>
