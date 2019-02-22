@@ -68,6 +68,12 @@ Route::middleware('auth')->group(function () {
   });
 
   Route::get('qrdisplay', 'MailController@display');
+
+  Route::post('setdisqualified', function (Request $request) {
+    $user               = User::find($request->id);
+    $user->disqualified = $request->status;
+    $user->save();
+  });
 });
 
 Route::get('/login', 'LoginController@show')->name('login');

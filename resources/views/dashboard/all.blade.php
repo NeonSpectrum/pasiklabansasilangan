@@ -2,7 +2,7 @@
 
 @include('header')
 @include('navbar')
-<div class="col s12" style="margin: 30px 50px 0 50px">
+<div class="col s12" style="margin: 30px 20px 0">
   <div class="card material-table">
     <div class="table-header">
       <span class="table-title">List of All Guests (Total: {{ $total }})</span>
@@ -23,17 +23,14 @@
           <th>School</th>
           <th>Program</th>
           <th>Date Registered</th>
+          <th width="8%">Disqualified</th>
         </tr>
       </thead>
       <tbody>
         @foreach($data as $id => $row)
-          <tr class="{{ $row['data']->status ?? ''}}">
+          <tr>
             <td>{{ $id + 1 }}</td>
-            <td>
-              <a href="#" onclick="showGuestInfo({{ $row['data']->id }})">
-                {{ $row["data"]->first_name . " " . $row["data"]->last_name }}{{ $row["data"]->nickname ? " ({$row["data"]->nickname})" : "" }}
-              </a>
-            </td>
+            <td>{{ $row["data"]->name }}</td>
             <td>{{ $row["data"]->email_address }}</td>
             <td>{{ $row["data"]->reference_number }}</td>
             <td>{{ $row["data"]->strand }}</td>
@@ -41,6 +38,12 @@
             <td>{{ $row["data"]->preferred_school }}</td>
             <td>{{ $row["data"]->preferred_program }}</td>
             <td>{{ $row["data"]->created_at->format("F d, Y") }}</td>
+            <td style="text-align:center">
+              <label>
+                <input type="checkbox" class="filled-in" data-id="{{ $row["data"]->id }}" name="disqualified" {{ $row["data"]->disqualified == 1 ? "checked" : "" }}>
+                <span></span>
+              </label>
+            </td>
           </tr>
         @endforeach
       </tbody>

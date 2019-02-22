@@ -20,7 +20,7 @@ $(document).ready(function() {
   })
   $('select[name=strand]').formSelect()
 
-  $('.dropdown-trigger').dropdown()
+  // $('.dropdown-trigger').dropdown()
 
   $('form[name=frmLogin]').submit(function(e) {
     e.preventDefault()
@@ -123,6 +123,14 @@ $(document).ready(function() {
     $('#verifyPasswordModal')
       .find('input[name=password]')
       .focus()
+  })
+
+  $('input[name=disqualified]').click(function() {
+    $.ajax({
+      type: 'POST',
+      url: main_url + '/setdisqualified',
+      data: { id: $(this).data('id'), status: $(this).prop('checked') ? 1 : 0 }
+    })
   })
 
   let dTable = $('.datatable').DataTable({
