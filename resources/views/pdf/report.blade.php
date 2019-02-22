@@ -18,14 +18,14 @@
 <table width="100%" cellspacing="0">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Email Address/Reference Number</th>
-      <th>Strand</th>
-      <th>Preferred School</th>
-      <th>Preferred Program/Course</th>
-      <th>Parent's Contact Number</th>
-      <th>Date Registered</th>
+      <th width="5%">ID</th>
+      <th width="15%">Name</th>
+      <th width="15%">Email Address/Reference Number</th>
+      <th width="10%">Strand</th>
+      <th width="15%">Preferred School</th>
+      <th width="15%">Preferred Program/Course</th>
+      <th width="15%">Parent's Contact Number</th>
+      <th width="10%">Date Registered</th>
     </tr>
   </thead>
   <tbody>
