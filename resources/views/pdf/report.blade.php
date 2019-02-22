@@ -31,14 +31,14 @@
   <tbody>
     @foreach($data as $id => $row)
       <tr>
-        <td>{{ $id + 1 }}</td>
-        <td>{{ $row->name }}</td>
-        <td>{{ $row->email_address }}<br/>{{ $row->reference_number }}</td>
-        <td>{{ $row->strand }}</td>
-        <td>{{ $row->preferred_school }}</td>
-        <td>{{ $row->preferred_program }}</td>
-        <td>{{ $row->parents_contact_number }}</td>
-        <td>{{ $row->created_at->format('F d, Y') }}</td>
+        <td width="5%">{{ $id + 1 }}</td>
+        <td width="15%">{{ $row->name }}</td>
+        <td width="15%">{{ $row->email_address }}<br/>{{ $row->reference_number }}</td>
+        <td width="10%">{{ $row->strand }}</td>
+        <td width="15%">{{ $row->preferred_school }}</td>
+        <td width="15%">{{ $row->preferred_program }}</td>
+        <td width="15%">{{ $row->parents_contact_number }}</td>
+        <td width="10%">{{ $row->created_at->format('F d, Y') }}</td>
       </tr>
     @endforeach
   </tbody>
