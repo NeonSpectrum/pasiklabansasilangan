@@ -11,46 +11,36 @@
   }
 </style>
 <center>
-  <h1 style="margin-bottom:5px">CCSS 30th Alumni Homecoming Ticket Sales</h1>
+  <h1 style="margin-bottom:5px">Pasiklaban sa Silangan Registration List</h1>
   <small>As of {{ date("F d, Y h:i:s A") }}</small>
 </center>
 <br>
 <table width="100%" cellspacing="0">
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Count</th>
-      <th>Persons</th>
-      <th>Referrer</th>
-      <th>Date Sent</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email Address/Reference Number</th>
+      <th>Strand</th>
+      <th>Preferred School</th>
+      <th>Preferred Program/Course</th>
+      <th>Parent's Contact Number</th>
+      <th>Date Registered</th>
     </tr>
   </thead>
   <tbody>
-    @php ($id = 1)
-    @php ($total = 0)
-    @foreach($data as $row)
+    @foreach($data as $id => $row)
       <tr>
-        <td>Ticket Sales ({{ $row->companions['count'] + 1 }})</td>
-        <td style="text-align:right">{{ number_format(($row->companions['count'] + 1) * 1000, 2, '.', ',') }}</td>
-        <td style="text-align:center">{{ $row->companions['count'] == 0 ? $id : $id . '-' . ($id + $row->companions['count']) }}</td>
-        <td>{!! $row->first_name . ' ' . $row->last_name . '<br>' . $row->companions['names'] !!}</td>
-        <td>{{ $row->referrer }}</td>
-        <td>{{ date('F d, Y', strtotime($row->date_sent)) }}</td>
+        <td>{{ $id + 1 }}</td>
+        <td>{{ $row->name }}</td>
+        <td>{{ $row->email_address }}<br>{{ $row->reference_number }}</td>
+        <td>{{ $row->strand }}</td>
+        <td>{{ $row->preferred_school }}</td>
+        <td>{{ $row->preferred_program }}</td>
+        <td>{{ $row->parents_contact_number }}</td>
+        <td>{{ $row->created_at->format('F d, Y') }}</td>
       </tr>
-      @php ($id += $row->companions['count'] + 1)
-      @php ($total += ($row->companions['count'] + 1) * 1000)
     @endforeach
   </tbody>
-  <tfoot>
-    <tr>
-      <th style="text-align:right">Total:</th>
-      <th style="text-align:right">{{ number_format($total, 2, ".", ",") }}</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </tfoot>
 </table>
 <div style="position:absolute;bottom:0;width:100%;text-align:center">CCSS Research and Development Unit</div>

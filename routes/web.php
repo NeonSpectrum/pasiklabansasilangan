@@ -32,8 +32,7 @@ Route::middleware('auth')->group(function () {
   Route::post('scanner', 'DashboardController@scanner');
   Route::get('loggedlist', 'DashboardController@loggedList');
   Route::get('logs', 'LogController@show')->name('logs');
-  Route::get('export/all', 'DashboardController@exportall')->name('export.all');
-  Route::get('export/sentticket', 'DashboardController@exportsentticket')->name('export.sentticket');
+  Route::get('report', 'ReportController@show');;
 
   Route::post('/user/delete', function (Request $request) {
     $code     = $request->code;
@@ -67,9 +66,6 @@ Route::middleware('auth')->group(function () {
   Route::get('/user/{id}', function (Request $request) {
     return json_encode(\DB::table('users')->where('id', $request->id)->first());
   });
-
-  Route::get('/report', 'ReportController@show')->name('report');
-  Route::get('report/batch', 'ReportController@batchDisplay')->name('batch');
 
   Route::get('qrdisplay', 'MailController@display');
 });
