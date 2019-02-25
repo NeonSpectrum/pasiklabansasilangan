@@ -60,7 +60,7 @@ class DashboardController extends Controller {
 
         file_put_contents($file, $image);
 
-        $user->logged_at = \Carbon::now();
+        $user->logged_at = \Carbon\Carbon::now();
         $user->save();
 
         return response()->json(['success' => true, 'name' => $user->first()->first_name . ' ' . $user->first()->last_name]);
