@@ -33,33 +33,19 @@ if ($('#preview').length > 0) {
         currentData.name = response.name
         swal({
           title: 'Valid QR Code',
-          text: 'Retrieving data...',
+          text: 'Welcome to pasiklaban sa silangan.',
           timer: 3000,
           onOpen: () => {
             swal.showLoading()
           }
-        })
-        setTimeout(function() {
-          swal({
-            title: 'Welcome, ' + response.name,
-            text: 'Start Taking Photos.',
-            timer: 3000,
-            onOpen: () => {
-              swal.showLoading()
-            }
-          })
-          setTimeout(function() {
-            preparePhoto()
-          }, 3000)
-        }, 3000)
+        }).then(()=>scanner.start())
       } else {
         swal({
           title: response.error,
           html: '<span style="color:red">See registration committee</span>',
           timer: 3000,
           showConfirmButton: false
-        })
-        scanner.start()
+        }).then(()=>scanner.start())
       }
     })
   })
@@ -74,64 +60,6 @@ if ($('#preview').length > 0) {
     .catch(function(e) {
       console.error(e)
     })
-}
-function preparePhoto() {
-  navigator.mediaDevices
-    .getUserMedia({
-      video: { width: 375, height: 375 }
-    })
-    .then(stream => {
-      let player
-      swal({
-        html: `
-          <video id="capturePhoto" style="transform:rotateY(180deg)"></video>
-          <center>
-            Capturing in<br>
-            <h1 class="countdown" style="margin:0">5</h1>
-          </center>
-        `,
-        timer: 5000,
-        showConfirmButton: false,
-        customClass: 'swal2-modal-lg',
-        onOpen: () => {
-          player = document.getElementById('capturePhoto')
-          player.srcObject = stream
-          player.play()
-          window.timer = setInterval(function() {
-            $('h1.countdown').text(Number($('h1.countdown').text()) - 1)
-          }, 1000)
-        },
-        onClose: () => {
-          clearInterval(timer)
-        }
-      }).then(result => {
-        let picture = document.createElement('canvas')
-        picture.height = 375
-        picture.width = 375
-        picture.getContext('2d').drawImage(player, 0, 0, 375, 375)
-
-        showImage(picture.toDataURL())
-      })
-    })
-}
-
-function showImage(url) {
-  swal({
-    imageUrl: url,
-    showCancelButton: true,
-    cancelButtonText: 'Retake'
-  }).then(result => {
-    if (result.value) {
-      $.ajax({
-        type: 'POST',
-        data: { type: 'picture', code: currentData.code, image: url }
-      }).always(function() {
-        location.reload()
-      })
-    } else {
-      preparePhoto()
-    }
-  })
 }
 function fetchLogged() {
   if ($('table').length == 0) return
