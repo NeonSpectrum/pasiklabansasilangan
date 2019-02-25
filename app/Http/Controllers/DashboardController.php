@@ -63,7 +63,7 @@ class DashboardController extends Controller {
         $user->logged_at = \Carbon\Carbon::now();
         $user->save();
 
-        return response()->json(['success' => true, 'name' => $user->first()->first_name . ' ' . $user->first()->last_name]);
+        return response()->json(['success' => true, 'name' => $user->name]);
       }
     } else if ($request->type == 'picture') {
       $image = str_replace('data:image/png;base64,', '', $image);
