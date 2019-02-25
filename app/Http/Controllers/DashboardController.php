@@ -49,6 +49,8 @@ class DashboardController extends Controller {
         return response()->json(['success' => false, 'error' => 'Invalid QR Code.']);
       } else if ($user->isLogged) {
         return response()->json(['success' => false, 'error' => 'Already Logged In.']);
+      } else if ($user->disqualified == 1) {
+        return response()->json(['success' => false, 'error' => 'We have a questions for you.']);
       } else {
         $image = str_replace('data:image/webp;base64,', '', $image);
 

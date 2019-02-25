@@ -36,14 +36,14 @@ if ($('#preview').length > 0) {
           text: 'Welcome to pasiklaban sa silangan.',
           timer: 3000,
           showConfirmButton: false
-        }).then(()=>scanner.start())
+        }).then(() => scanner.start())
       } else {
         swal({
           title: response.error,
           html: '<span style="color:red">See registration committee</span>',
           timer: 3000,
           showConfirmButton: false
-        }).then(()=>scanner.start())
+        }).then(() => scanner.start())
       }
     })
   })
