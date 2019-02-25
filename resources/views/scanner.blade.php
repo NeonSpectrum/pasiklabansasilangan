@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ filemtime(public_path('css/style.css')) }}">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-  <title>Alumni Registration Scanner</title>
+  <title>Pasiklaban sa Silangan Scanner</title>
   @if(!isset($logged))
   <style>
     body {overflow:hidden !important;}
