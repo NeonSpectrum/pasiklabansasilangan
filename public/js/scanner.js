@@ -35,9 +35,7 @@ if ($('#preview').length > 0) {
           title: 'Valid QR Code',
           text: 'Welcome to pasiklaban sa silangan.',
           timer: 3000,
-          onOpen: () => {
-            swal.showLoading()
-          }
+          showConfirmButton: false
         }).then(()=>scanner.start())
       } else {
         swal({
