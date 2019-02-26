@@ -186,14 +186,14 @@ var pickName = function() {
       html: `
         <div style="font-size:85px;color:red;font-weight:bold">${name}</div>
         <div style="font-size:40px;color:red;font-weight:bold">${strand}</div>
-        <br>
+        <br><br>
         <div style="font-size:55px;color:black;font-weight:bold">Congratulations!</div>
       `,
       customClass: 'swal2-modal-md',
       showConfirmButton: false,
       allowOutsideClick: false,
       backdrop: 'url(img/rnd.png) 50% 50% / 63% no-repeat',
-      background:'none'
+      background: 'none'
     }).then(function() {
       inProgress = false
       $('.ticket>')
