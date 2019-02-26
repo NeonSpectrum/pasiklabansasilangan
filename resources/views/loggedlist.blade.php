@@ -17,6 +17,7 @@
           <th>Name</th>
           <th>Email Address</th>
           <th>Reference Number</th>
+          <th>Picture</th>
           <th>Time Logged</th>
         </tr>
       </thead>
@@ -27,6 +28,7 @@
             <td>{{ $row->name }}</td>
             <td>{{ $row->email_address }}</td>
             <td>{{ $row->reference_number }}</td>
+            <td>{{ asset('loggedlist/' . $row->reference_number . "-qrcode.webp") }}</td>
             <td>{{ $row->logged_at->format("F d, Y h:i:s A") }}</td>
           </tr>
         @endforeach
