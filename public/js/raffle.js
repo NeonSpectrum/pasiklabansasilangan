@@ -51,10 +51,10 @@ function elementInViewport(el) {
   )
 }
 
-function Ticket(name, ref) {
+function Ticket(name, ref, strand) {
   this.name = name
   this.points = 1
-  this.dom = $("<div class='ticket' data-ref='" + ref + "'>").text(name)
+  this.dom = $("<div class='ticket' data-ref='" + ref + "' data-strand='" + strand + "'>").text(name)
   this.fixPosition = function() {
     var me = this
     this.dom.css({
@@ -105,7 +105,7 @@ var makeTicketsWithPoints = function() {
   $('.ticket').remove()
   map(removeDuplicateNames(imported), function(tdata) {
     if (excluded.indexOf(tdata.reference_number) === -1) {
-      var t = new Ticket(tdata.first_name + ' ' + tdata.last_name, tdata.reference_number)
+      var t = new Ticket(tdata.first_name + ' ' + tdata.last_name, tdata.reference_number, tdata.strand)
       if (t.points > 0) t.dom.appendTo($('body'))
       tickets.push(t)
     }
@@ -177,11 +177,13 @@ var pickName = function() {
     var width = choices.width()
     var reference_number = choices.data('ref')
     var name = choices.text()
+    var strand = choices.data('strand')
     swal({
       html: `
         <div style="font-size:85px;color:red;font-weight:bold">${name}</div>
+        <div style="font-size:40px;color:red;font-weight:bold">${strand}</div>
         <br>
-        <div style="font-size:55px;color:red;font-weight:bold">Congratulations!</div>
+        <div style="font-size:55px;color:black;font-weight:bold">Congratulations!</div>
       `,
       customClass: 'swal2-modal-md',
       showConfirmButton: false,

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller {
   protected function show() {
-    return Auth::check() ? redirect()->route('dashboard.registered') : view('login');
+    return Auth::check() ? redirect()->route('dashboard.all') : view('login');
   }
 
   /**
