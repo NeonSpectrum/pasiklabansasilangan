@@ -24,10 +24,10 @@
         @foreach($data as $id => $row)
           <tr>
             <td>{{ $id + 1 }}</td>
-            <td>{{ $row["data"]->name }}</td>
-            <td>{{ $row["data"]->email_address }}</td>
-            <td>{{ $row["data"]->reference_number }}</td>
-            <td>{{ $row["data"]->logged_at->format("F d, Y") }}</td>
+            <td>{{ $row->name }}</td>
+            <td>{{ $row->email_address }}</td>
+            <td>{{ $row->reference_number }}</td>
+            <td>{{ $row->logged_at->format("F d, Y") }}</td>
           </tr>
         @endforeach
       </tbody>
