@@ -45,7 +45,7 @@ class DashboardController extends Controller {
     if ($request->type == 'qrcode') {
       $user = User::where('reference_number', $code)->first();
 
-      if (!$user->first()) {
+      if (!$user) {
         return response()->json(['success' => false, 'error' => 'Invalid QR Code.']);
       } else if ($user->isLogged) {
         return response()->json(['success' => false, 'error' => 'Already Logged In.']);
