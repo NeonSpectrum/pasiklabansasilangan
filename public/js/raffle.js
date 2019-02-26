@@ -74,7 +74,7 @@ function Ticket(name, ref, strand) {
         .hide(
           'drop',
           { direction: directions[length % directions.length] },
-          length <= 3 ? 750 : 3000 / length,
+          length <= 3 ? 300 : 1000 / length,
           function() {
             callback()
           }
@@ -88,7 +88,7 @@ function Ticket(name, ref, strand) {
         function() {
           callback()
         },
-        length == 2 ? 1000 : 3000 / length
+        length == 2 ? 300 : 1000 / length
       )
     }
   }
@@ -187,7 +187,8 @@ var pickName = function() {
       `,
       customClass: 'swal2-modal-md',
       showConfirmButton: false,
-      allowOutsideClick: false
+      allowOutsideClick: false,
+      backdrop: 'url(img/ticket-with-overlay.png) 0% 39% / cover no-repeat'
     }).then(function() {
       inProgress = false
       $('.ticket>')
