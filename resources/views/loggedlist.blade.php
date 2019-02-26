@@ -27,7 +27,7 @@
             <td>{{ $row->name }}</td>
             <td>{{ $row->email_address }}</td>
             <td>{{ $row->reference_number }}</td>
-            <td>{{ $row->logged_at->format("F d, Y") }}</td>
+            <td>{{ $row->logged_at->format("F d, Y h:i:s A") }}</td>
           </tr>
         @endforeach
       </tbody>
