@@ -179,9 +179,9 @@ var pickName = function() {
     var name = choices.text()
     swal({
       html: `
-        <div style="font-size:85px;color:orange;font-weight:bold">${name}</div>
+        <div style="font-size:85px;color:red;font-weight:bold">${name}</div>
         <br>
-        <div style="font-size:55px;color:orange;font-weight:bold">Congratulations!</div>
+        <div style="font-size:55px;color:red;font-weight:bold">Congratulations!</div>
       `,
       customClass: 'swal2-modal-md',
       showConfirmButton: false,
