@@ -4,6 +4,10 @@ $.ajaxSetup({
   }
 })
 
+$(document).ready(function() {
+  makeTicketsWithPoints()
+})
+
 var excluded = []
 
 var colors = ['#4daf7c', '#87d37c', '#00b16a', '#2ecc71', '#3fc380']

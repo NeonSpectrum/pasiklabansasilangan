@@ -27,8 +27,6 @@
 <script src="{{ asset('js/underscore-min.js') }}"></script>
 <script>
   var imported = @json($data);
-  $('.enter-names').hide();
-  makeTicketsWithPoints();
 </script>
 <script src="{{ asset('js/raffle.js') }}?v={{ filemtime(public_path('js/raffle.js')) }}"></script>
 </body>
