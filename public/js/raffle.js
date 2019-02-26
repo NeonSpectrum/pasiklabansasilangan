@@ -97,7 +97,7 @@ function Ticket(name, ref) {
 var tickets = []
 
 var removeDuplicateNames = function(data) {
-  return _.shuffle(data).slice(0, 100)
+  return _.shuffle(data).slice(0, 150)
 }
 
 var makeTicketsWithPoints = function() {
