@@ -4,7 +4,7 @@ $.ajaxSetup({
   }
 })
 
-var excluded = ['2OMMIGXFGD']
+var excluded = []
 
 var colors = ['#4daf7c', '#87d37c', '#00b16a', '#2ecc71', '#3fc380']
 var transitionColor = ['#ff8d06', '#d91400', '#82dc2c']
@@ -84,9 +84,12 @@ function Ticket(name, ref) {
       this.dom.css({
         'background-color': 'gray'
       })
-      setTimeout(function() {
-        callback()
-      }, length == 2 ? 1000 : 3000 / length)
+      setTimeout(
+        function() {
+          callback()
+        },
+        length == 2 ? 1000 : 3000 / length
+      )
     }
   }
 }
@@ -94,15 +97,7 @@ function Ticket(name, ref) {
 var tickets = []
 
 var removeDuplicateNames = function(data) {
-  // var seen = {}
-  // return data.filter(function(d) {
-  //   if (seen[d.name.toLowerCase()]) {
-  //     return false
-  //   }
-  //   seen[d.name.toLowerCase()] = true
-  //   return true
-  // })
-  return data
+  return _.shuffle(data).slice(100)
 }
 
 var makeTicketsWithPoints = function() {
@@ -186,13 +181,10 @@ var pickName = function() {
       html: `
         <div style="font-size:85px;color:orange;font-weight:bold">${name}</div>
         <br>
-        <img src="loggedusers/${reference_number}-picture.png" alt="" height="500px" width="500px" style="object-fit:cover" />
         <div style="font-size:55px;color:orange;font-weight:bold">Congratulations!</div>
       `,
       customClass: 'swal2-modal-md',
       showConfirmButton: false,
-      background: 'none',
-      backdrop: 'url(img/ticket-with-overlay.png) 0% 39% / cover no-repeat',
       allowOutsideClick: false
     }).then(function() {
       inProgress = false

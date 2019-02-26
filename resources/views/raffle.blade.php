@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ filemtime(public_path('css/style.css')) }}">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-  <title>Alumni Registration Scanner</title>
+  <title>Pasiklaban sa Silangan Raffle</title>
   <style>
     body {
       background: white;
@@ -24,6 +24,7 @@
 <script src="{{ asset('js/materialize.min.js') }}"></script>
 <script src="{{ asset('js/jquery-ui-1.8.23.custom.min.js') }}"></script>
 <script src="{{ asset('js/sweetalert2.all.min.js') }}"></script>
+<script src="{{ asset('js/underscore-min.js') }}"></script>
 <script src="{{ asset('js/raffle.js') }}?v={{ filemtime(public_path('js/raffle.js')) }}"></script>
 <script>
   var imported = @json($data);
