@@ -16,6 +16,9 @@
       background: white;
       overflow:hidden !important;
     }
+    .swal2-modal{
+      border: 4px solid black;
+    }
   </style>
 </head>
 <body>

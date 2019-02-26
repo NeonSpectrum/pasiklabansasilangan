@@ -192,7 +192,8 @@ var pickName = function() {
       customClass: 'swal2-modal-md',
       showConfirmButton: false,
       allowOutsideClick: false,
-      backdrop: 'url(img/rnd.png) 0% 50% / cover no-repeat'
+      backdrop: 'url(img/rnd.png) 50% 50% / 63% no-repeat',
+      background:'none'
     }).then(function() {
       inProgress = false
       $('.ticket>')
