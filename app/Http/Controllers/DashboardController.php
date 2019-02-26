@@ -82,6 +82,10 @@ class DashboardController extends Controller {
     }
   }
 
+  protected function loggedList() {
+    return view('loggedlist', ['data' => User::whereNotNull('logged_at')->get()]);
+  }
+
   protected function raffle() {
     $logged = User::whereTime('logged_at', '<', '22:00:00')->where('winner', 0)->get();
 
