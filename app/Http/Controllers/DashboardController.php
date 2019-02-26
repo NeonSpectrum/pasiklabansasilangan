@@ -97,7 +97,7 @@ class DashboardController extends Controller {
    * @param Request $request
    */
   protected function raffleWinner(Request $request) {
-    Logged::where('reference_number', $request->ref)->update([
+    User::where('reference_number', $request->ref)->update([
       'winner' => 1
     ]);
   }
