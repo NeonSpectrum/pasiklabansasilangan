@@ -37,7 +37,7 @@
           <td style="width: 15%">{{ $row->name }}</td>
           <td style="width: 15%">{{ $row->email_address }}<br/>{{ $row->reference_number }}</td>
           <td style="width: 10%">{{ $row->strand }}</td>
-          <td style="width: 15%">{{ $row->preferred_school }}asdasdadasdasdasdasdasdasdas</td>
+          <td style="width: 15%">{{ $row->preferred_school }}</td>
           <td style="width: 15%">{{ $row->preferred_program }}</td>
           <td style="width: 15%">{{ $row->parents_contact_number }}</td>
           <td style="width: 10%">{{ $row->created_at->format('F d, Y') }}</td>

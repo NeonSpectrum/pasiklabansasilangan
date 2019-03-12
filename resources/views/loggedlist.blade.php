@@ -8,6 +8,7 @@
       <span class="table-title">List of Logged Guests (Total: {{ $data->count() }})</span>
       <div class="actions">
         <a href="#" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons">search</i></a>
+        <a href="{{ url('loggedlist/export')}}" class="search-toggle waves-effect btn-flat nopadding"><i class="material-icons">file_download</i></a>
       </div>
     </div>
     <table class="datatable">

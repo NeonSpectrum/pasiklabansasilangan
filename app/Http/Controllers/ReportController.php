@@ -16,4 +16,13 @@ class ReportController extends Controller {
 
     return $pdf->stream();
   }
+
+  /**
+   * @return mixed
+   */
+  protected function loggedList() {
+    $pdf = \PDF::loadView('pdf.report', ['data' => User::whereNotNull('logged_at')])->setPaper('a4', 'landscape');
+
+    return $pdf->stream();
+  }
 }
